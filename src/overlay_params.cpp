@@ -423,6 +423,9 @@ parse_gl_size_query(const char *str)
 #define parse_blacklist(s) parse_str_tokenize(s)
 #define parse_custom_text_center(s) parse_str(s)
 #define parse_custom_text(s) parse_str(s)
+#define parse_background_image(s) parse_str(s)
+#define parse_image(s) parse_str(s)
+#define parse_image_max_width(s) parse_unsigned(s)
 #define parse_fps_value(s) parse_load_value(s)
 #define parse_fps_color(s) parse_load_color(s)
 #define parse_battery_color(s) parse_color(s)
@@ -618,8 +621,7 @@ parse_overlay_config(struct overlay_params *params,
    params->fps_value = { 30, 60 };
    params->round_corners = 0;
    params->battery_color =0xff9078;
-
-
+   params->image_max_width = 0;
 
 #ifdef HAVE_X11
    params->toggle_hud = { XK_Shift_R, XK_F12 };
